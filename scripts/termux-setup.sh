@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
-
-color_scheme_url="https://github.com/prateekpunetha/termux-setup/raw/main/colors/colors.properties"
-font_url="https://github.com/prateekpunetha/termux-setup/raw/main/fonts/font.ttf"
-starship_config_url="https://github.com/prateekpunetha/termux-setup/raw/main/config_files/starship/config.toml"
-termux_dir="$HOME/.termux"
-
 # Termux update repos
 termux-change-repo
 
@@ -16,6 +9,12 @@ yes | pkg update && pkg upgrade
 
 # Install main stuff
 pkg install git wget jq openssh python python-pip termux-api zsh -y
+
+#Install fish 
+pkg install git -y && git clone https://github.com/msn-05/termux-fish.git && cd termux-fish && chmod +x script.sh && ./script.sh
+
+
+
 
 #Fix for pip install failing to work
 pkg up
